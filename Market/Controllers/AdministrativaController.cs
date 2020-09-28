@@ -32,12 +32,11 @@ namespace Market.Controllers
         [Authorize]
         public IActionResult Index()
         {            
-
-            //pega lista
-            //HttpContext.User.Claims
-            //var nome = HttpContext.User.Claims.FirstOrDefault(u => u.Type==ClaimTypes.Name);
             var nome = HttpContext.User.Claims.FirstOrDefault(u => u.Type == ClaimTypes.Name).Value;
             ViewBag.Nome = nome;
+
+            ObterContadores();
+
             return View();        
 
         }
@@ -76,6 +75,13 @@ namespace Market.Controllers
             }
 
             return RedirectToAction("CadastroCliente");
+        }
+
+        public void ObterContadores() {
+            ViewBag.Produtos = 0;
+            ViewBag.Usuarios = 0;
+            ViewBag.NotasFicais = 0;
+            ViewBag.Pedidos = 0;
         }
 
     }

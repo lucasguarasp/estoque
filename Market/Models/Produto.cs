@@ -34,5 +34,7 @@ namespace Market.Models
         public int? TamanhoId { get; set; }
         public virtual Medida Tamanho { get; set; }
 
+        public DateTime? DataExclusao { get; set; }
+
     }
 }

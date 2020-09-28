@@ -1,9 +1,10 @@
 # Market		
 	Para execução do sistema é necessário 1º criar o banco,
+	Ir no Package Manager Colose: 
 	-> Add-Migration InitialCreate
 	-> Update-Database
 	
-	-Ao cadastrar usuário, login CPF ou email.
+	-Ao cadastrar usuário, o login é feito pelo CPF ou email.
 	-Senha do usuário por padrão é o próprio CPF
 	
 	-Cadastro de insumos.

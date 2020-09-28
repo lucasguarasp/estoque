@@ -111,7 +111,7 @@ namespace Market.Controllers
 
         public IActionResult ListarProdutos()
         {
-            var produto = _db.Produtos.Include(c => c.Categoria).Include(m => m.Tamanho).ToList();
+            var produto = _db.Produtos.Where(p => p.DataExclusao == null).Include(c => c.Categoria).Include(m => m.Tamanho).ToList();
 
             if (produto != null)
             {
@@ -133,7 +133,9 @@ namespace Market.Controllers
         public IActionResult RemoveProduto(int Id)
         {
             var produto = _db.Produtos.Single(x => x.IdProduto == Id);
-            _db.Produtos.Remove(produto);
+
+            produto.DataExclusao = DateTime.Now;
+            _db.Produtos.Update(produto);
 
             if (produto.Foto != "~/images/ImgEmpty/noImg.jpg")
             {
@@ -151,9 +153,9 @@ namespace Market.Controllers
 
         public IActionResult AddInsumo()
         {
-            ViewBag.categorias = new SelectList(_db.Categorias.ToList(), "IdCategoria", "Descricao");
+            ViewBag.categorias = new SelectList(_db.Categorias.Where(p => p.DataExclusao == null).ToList(), "IdCategoria", "Descricao");
 
-            var insumo = _db.Insumos.ToList();
+            var insumo = _db.Insumos.Where(p => p.DataExclusao == null).ToList();
             return View(insumo);
         }
 
@@ -185,7 +187,9 @@ namespace Market.Controllers
         public IActionResult RemoveInsumo(int Id)
         {
             var insumo = _db.Insumos.Single(x => x.IdInsumo == Id);
-            _db.Insumos.Remove(insumo);
+            insumo.DataExclusao = DateTime.Now;
+
+            _db.Insumos.Update(insumo);
             _db.SaveChanges();
             return RedirectToAction("AddInsumo");
         }

@@ -12,5 +12,7 @@ namespace Market.Models
         [Column(TypeName = "datetime2")]
         [Required]
         public DateTime DataUpload { get; set; }
+        public DateTime? DataExclusao { get; set; }
+
     }
 }

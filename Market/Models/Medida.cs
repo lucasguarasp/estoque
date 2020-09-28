@@ -21,5 +21,7 @@ namespace Market.Models
 
         public int CategoriaId { get; set; }
         public virtual Categoria Categoria { get; set; }
+        public DateTime? DataExclusao { get; set; }
+
     }
 }

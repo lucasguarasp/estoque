@@ -14,6 +14,7 @@ namespace Market.Models
         [Required]
         [Display(Name = "Descrição")]
         public string Descricao { get; set; }
+        public DateTime? DataExclusao { get; set; }
 
     }
 }

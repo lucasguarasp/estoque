@@ -53,7 +53,6 @@ C:\Users\Lucas\Desktop\Pizzaria\Market\obj\Debug\netcoreapp2.2\Razor\Views\NotaF
 C:\Users\Lucas\Desktop\estoque\Market\obj\Debug\netcoreapp2.2\Market.csprojAssemblyReference.cache
 C:\Users\Lucas\Desktop\estoque\Market\obj\Debug\netcoreapp2.2\Market.AssemblyInfoInputs.cache
 C:\Users\Lucas\Desktop\estoque\Market\obj\Debug\netcoreapp2.2\Market.AssemblyInfo.cs
-C:\Users\Lucas\Desktop\estoque\Market\obj\Debug\netcoreapp2.2\Market.csproj.CoreCompileInputs.cache
 C:\Users\Lucas\Desktop\estoque\Market\obj\Debug\netcoreapp2.2\Market.RazorAssemblyInfo.cache
 C:\Users\Lucas\Desktop\estoque\Market\obj\Debug\netcoreapp2.2\Market.RazorAssemblyInfo.cs
 C:\Users\Lucas\Desktop\estoque\Market\obj\Debug\netcoreapp2.2\Market.dll
@@ -101,3 +100,4 @@ C:\Users\Lucas\Desktop\estoque\Market\obj\Debug\netcoreapp2.2\Market.RazorTarget
 C:\Users\Lucas\Desktop\estoque\Market\obj\Debug\netcoreapp2.2\Market.Views.pdb
 C:\Users\Lucas\Desktop\estoque\Market\obj\Debug\netcoreapp2.2\Market.genruntimeconfig.cache
 C:\Users\Lucas\Desktop\estoque\Market\obj\Debug\netcoreapp2.2\Market.csproj.CopyComplete
+C:\Users\Lucas\Desktop\estoque\Market\obj\Debug\netcoreapp2.2\Market.csproj.CoreCompileInputs.cache

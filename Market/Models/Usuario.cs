@@ -50,6 +50,8 @@ namespace Market.Models
 
         public int EnderecoId { get; set; }
         public virtual Endereco Endereco { get; set; }
+        public DateTime? DataExclusao { get; set; }
+
 
     }
 }
