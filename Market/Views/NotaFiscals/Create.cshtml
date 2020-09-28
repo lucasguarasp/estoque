@@ -1,0 +1,44 @@
+﻿@model Market.Models.NotaFiscal
+
+@{
+    ViewData["Title"] = "Cadastro Nota Fical";
+    Layout = "~/Views/Shared/_LayoutAdministrativa.cshtml";
+}
+
+
+<div class="box box-info">
+    <div class="box-header with-border">
+        <h3 class="box-title">Cadastro de Nota Fiscal</h3>
+    </div>
+    <form asp-action="Create" class="form-horizontal" method="post" enctype="multipart/form-data">
+        <div class="box-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <div class="col-lg-12">
+                    <label asp-for="Descricao" class="control-label"></label>
+                    <input asp-for="Descricao" class="form-control" />
+                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-lg-12">
+                    <label asp-for="Arquivo" class="control-label"></label>
+                    <input type="file" name="Arquivo" asp-for="Arquivo"/>
+                    <span asp-validation-for="Arquivo" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <button type="submit" value="Create" class="btn btn-info pull-right">Adicionar</button>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

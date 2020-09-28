@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Market.Models.NotaFiscal>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdministrativa.cshtml";
+}
+
+<div class="box box-info">
+    <div class="box-header">
+        <h4 class="box-title">Produtos</h4>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table id="example1" class="table table-hover table-bordered dataTable" role="grid" aria-describedby="example1_info">
+                        <thead>
+                            <tr role="row">
+                                <th style="width: 60%;">@Html.DisplayNameFor(model => model.Descricao)</th>
+                                <th style="width: 30%;"> @Html.DisplayNameFor(model => model.DataInclusao)</th>
+                                <th style="width: 10%;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr role="row" class="odd">
+                                    <td>@Html.DisplayFor(modelItem => item.Descricao)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.DataInclusao)</td>
+                                    <td style="text-align: center">
+                                        <a asp-action="Delete" asp-route-id="@item.IdNotaFiscal" class="glyphicon glyphicon-trash fa-lg"></a> |
+                                        <a asp-action="Edit" asp-route-id="@item.IdNotaFiscal" class="glyphicon glyphicon-edit fa-lg"></a>|
+                                        <a asp-action="DownloadNota" asp-route-id="@item.IdNotaFiscal" class="glyphicon glyphicon-download fa-lg"></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.box-body -->
+</div>
+

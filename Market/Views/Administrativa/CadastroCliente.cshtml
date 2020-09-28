@@ -1,0 +1,111 @@
+﻿@model Market.ViewModels.ViewModelCadastro
+
+@{
+    ViewData["Title"] = "CadastroCliente";
+    Layout = "~/Views/Shared/_LayoutAdministrativa.cshtml";
+}
+
+<script src="~/Script/CEP.js"></script>
+
+<div class="box box-info">
+    <div class="box-header with-border">
+        <h3 class="box-title">Cadastro de clientes</h3>
+    </div>
+    <form asp-action="CadastroCliente" class="form-horizontal">
+        <div class="box-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label asp-for="Cadastro.Nome" class="control-label"></label>
+                    <input asp-for="Cadastro.Nome" class="form-control" required/>
+                    <span asp-validation-for="Cadastro.Nome" class="text-danger"></span>
+                </div>
+
+                <div class="col-sm-4">
+                    <label asp-for="Cadastro.Email" class="control-label"></label>
+                    <input asp-for="Cadastro.Email" class="form-control" required/>
+                    <span asp-validation-for="Cadastro.Email" class="text-danger"></span>
+                </div>
+                <div class="col-sm-4">
+                    <label asp-for="Cadastro.Cpf" class="control-label"></label>
+                    <input asp-for="Cadastro.Cpf" class="form-control" placeholder="Ex.: 000.000.000-00" onkeypress="CEP(this, '###.###.###-##')" maxlength="14" required>
+                    <span asp-validation-for="Cadastro.Cpf" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-3">
+                    <label asp-for="Cadastro.DataNascimento" class="control-label"></label>
+                    <input asp-for="Cadastro.DataNascimento" class="form-control" type="date" required>
+                    <span asp-validation-for="Cadastro.DataNascimento" class="text-danger"></span>
+                </div>
+
+                <div class="col-sm-3">
+                    <label asp-for="Cadastro.Telefone" class="control-label"></label>
+                    <input asp-for="Cadastro.Telefone" class="form-control" placeholder="Ex.: (00) 0000-0000" onkeyup="TEL( this, mtel );" maxlength="14" />
+                    <span asp-validation-for="Cadastro.Telefone" class="text-danger"></span>
+                </div>
+
+                <div class="col-sm-3">
+                    <label asp-for="Cadastro.Celular" class="control-label"></label>
+                    <input asp-for="Cadastro.Celular" class="form-control" placeholder="Ex.: (00) 00000-0000" onkeyup="CEL( this, mcel );" maxlength="15" />
+                    <span asp-validation-for="Cadastro.Celular" class="text-danger"></span>
+                </div>
+
+                <div class="col-sm-3">
+                    <label asp-for="Cadastro.Sexo" class="control-label"></label>
+                    <select asp-for="Cadastro.Sexo" class="form-control select2" style="width: 100%;">
+                        <option value="0">Selecione</option>
+                        <option>Masculino</option>
+                        <option>Feminino</option>
+                    </select>
+
+                    @*<input  class="form-control" />*@
+                    <span asp-validation-for="Cadastro.Sexo" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label asp-for="Endereco.Cep" class="control-label"></label>
+                    <input asp-for="Endereco.Cep" class="form-control" placeholder="Ex.: 00000-000" id="cep" onblur="pesquisacep(this.value);" onkeypress="CEP(this, '#####-###')" maxlength="9" />
+                    <span asp-validation-for="Endereco.Cep" class="text-danger"></span>
+                </div>
+
+                <div class="col-sm-6">
+                    <label asp-for="Endereco.Rua" class="control-label"></label>
+                    <input asp-for="Endereco.Rua" class="form-control" id="rua" />
+                    <span asp-validation-for="Endereco.Rua" class="text-danger"></span>
+                </div>
+                <div class="col-sm-2">
+                    <label asp-for="Endereco.Numero" class="control-label"></label>
+                    <input asp-for="Endereco.Numero" class="form-control" />
+                    <span asp-validation-for="Endereco.Numero" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label asp-for="Endereco.Cidade" class="control-label"></label>
+                    <input asp-for="Endereco.Cidade" class="form-control" id="cidade" />
+                    <span asp-validation-for="Endereco.Cidade" class="text-danger"></span>
+                </div>
+                <div class="col-sm-4">
+                    <label asp-for="Endereco.Bairro" class="control-label"></label>
+                    <input asp-for="Endereco.Bairro" class="form-control" id="bairro" />
+                    <span asp-validation-for="Endereco.Bairro" class="text-danger"></span>
+                </div>
+                <div class="col-sm-4">
+                    <label asp-for="Endereco.Complemento" class="control-label"></label>
+                    <input asp-for="Endereco.Complemento" class="form-control" />
+                    <span asp-validation-for="Endereco.Complemento" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <button type="submit" value="Create" class="btn btn-info pull-right">Cadastrar</button>
+            </div>
+        </div>
+
+    </form>
+</div>
